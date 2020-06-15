@@ -43,5 +43,11 @@ public class MonHoc {
     public void setSoTC(int soTC) {
         this.soTC = soTC;
     }
+
+    @Override
+    public String toString() {
+        return "MonHoc{" + "MaMH: " + maMH + ", TenMH: " + tenMH + ", SoTC: " + soTC + '}';
+    }
+    
     
 }

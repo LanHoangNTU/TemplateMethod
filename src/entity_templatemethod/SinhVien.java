@@ -55,4 +55,14 @@ public class SinhVien {
     public void setQueQuan(String queQuan) {
         this.queQuan = queQuan;
     }
+
+    @Override
+    public String toString() {
+        return "SinhVien{" + "MaSV: " + maSV + 
+                ", TenSV: " + tenSV + 
+                ", NgaySinh: " + ngaySinh.get(Calendar.DAY_OF_MONTH) + "-" +
+                ngaySinh.get(Calendar.MONTH) + "-" +
+                ngaySinh.get(Calendar.YEAR) +
+                ", QueQuan: " + queQuan + '}';
+    }
 }

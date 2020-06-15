@@ -33,7 +33,7 @@ public abstract class EntityDB<T> {
         int key = getKey(t);
         T target = findByID(key);
         if(target != null){
-            list.set(list.indexOf(target), target);
+            list.set(list.indexOf(target), t);
             return 1;
         }
         return 0;
@@ -58,6 +58,13 @@ public abstract class EntityDB<T> {
         return 0;
     }
     
+    public String toString(){
+        String str = "";
+        for (T t : list) {
+            str += t.toString() + "\n";
+        }
+        return str;
+    }
     protected abstract T findByID(int id);
     protected abstract int getKey(T t);
 }
