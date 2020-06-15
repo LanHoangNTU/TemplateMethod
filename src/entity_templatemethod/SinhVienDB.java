@@ -21,7 +21,7 @@ public class SinhVienDB extends EntityDB<SinhVien>{
     }
 
     @Override
-    protected int getKey(SinhVien t) {
+    protected int getId(SinhVien t) {
         return t.getMaSV();
     }
     

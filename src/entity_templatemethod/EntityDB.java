@@ -21,7 +21,7 @@ public abstract class EntityDB<T> {
     }
     
     public boolean add(T t){
-        int key = getKey(t);
+        int key = getId(t);
         T target = findByID(key);
         if(target != null)
             return false;
@@ -30,7 +30,7 @@ public abstract class EntityDB<T> {
     }
     
     public int update(T t){
-        int key = getKey(t);
+        int key = getId(t);
         T target = findByID(key);
         if(target != null){
             list.set(list.indexOf(target), t);
@@ -40,7 +40,7 @@ public abstract class EntityDB<T> {
     }
     
     public int delete(T t){
-	int key = getKey(t);
+	int key = getId(t);
 	T target = findByID(key);
 	if(target != null){
             list.remove(target);
@@ -58,6 +58,7 @@ public abstract class EntityDB<T> {
         return 0;
     }
     
+    @Override
     public String toString(){
         String str = "";
         for (T t : list) {
@@ -66,5 +67,5 @@ public abstract class EntityDB<T> {
         return str;
     }
     protected abstract T findByID(int id);
-    protected abstract int getKey(T t);
+    protected abstract int getId(T t);
 }

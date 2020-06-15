@@ -21,7 +21,7 @@ public class MonHocDB extends EntityDB<MonHoc>{
     }
 
     @Override
-    protected int getKey(MonHoc t) {
+    protected int getId(MonHoc t) {
         return t.getMaMH();
     }
 }
